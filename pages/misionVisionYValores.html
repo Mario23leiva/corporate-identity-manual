@@ -1,0 +1,155 @@
+<style>
+    .MVV {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .MVV .mainContainer {
+        display: flex;
+        width: 100%;
+        height: 80%;
+    }
+
+    .MVV .mainContainer .MVV-content .item {
+        text-align: center;
+        width: min-content;
+    }
+
+    .MVV .mainContainer .MVV-content .item h1 {
+        background-color: #3b3b3b;
+        color: #fbfbfb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        padding: 70px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .MVV .mainContainer .MVV-content .item.active h1 {
+        color: #2f914c;
+    }
+
+    .MVV .mainContainer .info {
+        height: 20rem;
+    }
+
+    .MVV .mainContainer .info .info-content {
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .MVV .mainContainer .info .info-content.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .MVV .mainContainer .info p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: #444 solid 1px;
+        width: 60%;
+        height: 60%;
+        border-radius: 15px;
+        padding: 10px;
+    }
+</style>
+<div class="MVV">
+    <div class="row">
+        <h2 class="MVV-title">Misión</h2>
+    </div>
+    <div class="mainContainer row align-items-center">
+        <div class="col">
+
+            <div class="info row justify-content-center align-items-center">
+                <div id="mision" class="info-content active">
+                    <p>Brindar a nuestros clientes una experiencia gastronómica única y memorable en un ambiente familiar y acogedor. En el Bar Restaurante Pizzería 23, nos esforzamos por ofrecer platillos de alta calidad, preparados con ingredientes frescos y auténticos. Nos dedicamos a crear momentos especiales para familias y amigos, donde la buena comida se combina con un servicio excepcional, contribuyendo así a la construcción de recuerdos felices que perduren en el tiempo.</p>
+                </div>
+                <div id="vision" class="info-content">
+                    <p>Ser reconocidos como el destino preferido para aquellos que buscan una combinación perfecta de sabores, comodidad y calidez. En el Bar Restaurante Pizzería 23, aspiramos a ser líderes en la industria gastronómica familiar, innovando constantemente en nuestros menús para satisfacer los gustos cambiantes de nuestros clientes. Buscamos expandir nuestra presencia, manteniendo siempre la esencia de ser un lugar donde la comida deliciosa se une con un servicio excepcional, creando así una conexión duradera con nuestra comunidad.</p>
+                </div>
+                <div id="valores" class="info-content">
+                    <p>Excelencia, cercanía, integridad, innovación y compromiso con la comunidad</p>
+                </div>
+            </div>
+            <div class="MVV-content row d-flex justify-content-center align-items-center">
+
+                <div class="item active" data-MVV="mision">
+                    <h1>M</h1>
+                </div>
+                <div class="item" data-MVV="vision">
+                    <h1>V</h1>
+                </div>
+                <div class="item" data-MVV="valores">
+                    <h1>V</h1>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    const VALUE_MISION = 'mision';
+    const VALUE_VISION = 'vision';
+    const VALUE_VALORES = 'valores';
+
+    const itemsMVV = document.querySelectorAll('.item');
+    const infoContents = document.querySelectorAll('.info-content');
+    let MVVtitle = document.querySelector('.MVV-title');
+
+    itemsMVV.forEach(item => {
+        item.addEventListener('click', () => {
+            const MVV = item.getAttribute('data-MVV');
+            moveInfoMVV(MVV);
+        });
+    });
+
+    function moveInfoMVV(MVV) {
+        // Elimina la clase 'active' de todos los elementos
+        itemsMVV.forEach(item => {
+            item.classList.remove('active');
+        });
+
+        infoContents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        const activeInfoElement = document.getElementById(MVV);
+        const activeItemElement = document.querySelector(`.item[data-MVV="${MVV}"]`);
+
+        if (activeInfoElement && activeItemElement) {
+            activeInfoElement.classList.add('active');
+            activeItemElement.classList.add('active');
+        }
+
+        switch (MVV) {
+            case VALUE_MISION:
+                MVVtitle.innerText = 'Misión';
+                break;
+            case VALUE_VISION:
+                MVVtitle.innerText = 'Visión';
+                break;
+            case VALUE_VALORES:
+                MVVtitle.innerText = 'Valores';
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+
+
+</script>

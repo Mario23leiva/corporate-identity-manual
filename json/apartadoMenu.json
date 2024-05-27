@@ -1,0 +1,23 @@
+{
+    "apartados_menu": {
+        "Entrantes": {
+            "Quienes somos": 1,
+            "Mision vision y valores": 2
+        },
+        "Plato principal": {
+            "Nuestro logo": 3,
+            "Variaciones": 4,
+            "Logo: Ejemplos de uso": 5
+        },
+        "Paleta de sabores": {
+            "Nuestra paleta de colores": 6
+        },
+        "Letra de la carta": {
+            "Nuestras Tipografías": 7,
+            "Tipografías: Ejemplos de uso": 8
+        },
+        "Mesa de atención": {
+            "Contacto y recursos": 9
+        }
+    }
+}

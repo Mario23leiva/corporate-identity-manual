@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6645ba3d64.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleManual.css">
+    <script src="js/script.js"></script>
+    <title>Manual de identidad coorporativo</title>
+</head>
+
+<body>
+    <input type="checkbox" id="checkbox-cover">
+    <input type="checkbox" id="checkbox-page1">
+    <input type="checkbox" id="checkbox-page2">
+    <input type="checkbox" id="checkbox-manual">
+    <div class="book trigger">
+        <div class="cover">
+            <label for="checkbox-cover">
+            </label>
+        </div>
+        <div class="page" id="page1">
+            <div class="front-page">
+                <p class="title">RESTAURANTE - BAR</p>
+                <p class="num-title">23</p>
+                <p class="title verde">*PIZZERIA*</p>
+                <p>Angel María Torres</p>
+            </div>
+            <label class="next" for="checkbox-page1"></label>
+            <div class="back-page" style="border: 1px solid black;">
+                <label class="prev" for="checkbox-page1"></label>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <div class="front-page" style="border: 1px solid black;">
+                <p class="title">MANUAL DE IDENTIDAD COORPORATIVA</p>
+                <p class="title verde">*DESIGNED BY*</p>
+                <p>Mario Leiva Torres</p>
+            </div>
+            <label class="next" for="checkbox-page2"></label>
+            <div class="back-page">
+                <label class="prev" for=""></i></label>
+            </div>
+        </div>
+        <div class="page" id="page3">
+            <div class="front-page">
+                <label class="load-manual" for="checkbox-manual"></label>
+            </div>
+        </div>
+        <div class="back-cover"></div>
+    </div>
+
+    <div id="manual" class="">
+        <div class="menu">
+            <div class="header-menu textoConSombra">23</div>
+            <div class="body-menu">
+                <nav class="nav-menu">
+                    <ul class="list-unstyled ps-0" id="apartados-menu">
+                        <!-- LA LISTA SE CREA DINAMICAMENTE -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="contenedor">
+            <!-- CREAMOS LAS PÁGINAS DINAMICAMENTE -->
+        </div>
+    </div>
+
+    <!-- <div class="center-line"></div> -->
+</body>
+
+</html>

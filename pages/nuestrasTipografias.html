@@ -1,0 +1,84 @@
+<style>
+    .nuestrasTipos {
+        height: 100%;
+    }
+
+    .nuestrasTipos .col-fonts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nuestrasTipos .col-fonts div{
+        margin: 20px 0;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .nuestrasTipos .col-fonts div:hover{
+        color: #2f914c;
+    }
+
+    .nuestrasTipos .col-fonts div.active{
+        color: #2f914c;
+    }
+
+    .nuestrasTipos .col-fonts-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 10%;
+        font-size: 25px;
+    }
+</style>
+
+<h2>Nuestras tipografias</h2>
+<div class="nuestrasTipos row">
+    <div class="col col-fonts">
+        <div class="font active besley-bold" data-font="besley-bold">Besley Bold</div>
+        <div class="font helvetica" data-font="helvetica">Helvetica</div>
+        <div class="font helvetica-bold" data-font="helvetica-bold">Helvetica Bold</div>
+        <div class="font helvetica-italic" data-font="helvetica-italic">Helvetica Italic</div>
+    </div>
+    <div class="col col-fonts-info besley-bold" data-font-active="besley-bold">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere sunt excepturi vitae unde ab. Similique atque
+        iure animi illum. Consequatur harum ducimus exercitationem? Delectus, tempora neque! Aliquam, harum officia.
+        Officiis numquam voluptatum maiores ratione autem totam tempore architecto voluptatibus magni. 23
+    </div>
+</div>
+
+<script>
+    const fonts = document.querySelectorAll('.font');
+    const colFontsInfo = document.querySelector('.col-fonts-info');
+
+    fonts.forEach(function (font) {
+        font.addEventListener('click', function () {
+            changeFont(font.getAttribute('data-font'));
+        })
+    })
+
+    function changeFont(font) {
+        // Desactivar la clase 'active' en todas las tipografías
+        fonts.forEach(function (f) {
+            f.classList.remove('active');
+        });
+
+        // Activar la clase 'active' en la tipografía seleccionada
+        document.querySelector(`.font.${font}`).classList.add('active');
+
+        const activeFont = document.querySelector('.col-fonts-info').getAttribute('data-font-active');
+        
+        colFontsInfo.classList.remove(activeFont);
+        colFontsInfo.classList.add(font);
+        colFontsInfo.setAttribute('data-font-active', font);
+    }
+
+    // // Un objeto que contiene textos de ejemplo para cada tipografía
+    // const loremIpsumText = {
+    //     'besley-bold': 'Texto con la fuente Besley Bold.',
+    //     'helvetica': 'Texto con la fuente Helvetica.',
+    //     'helvetica-bold': 'Texto con la fuente Helvetica Bold.',
+    //     'helvetica-italic': 'Texto con la fuente Helvetica Italic.'
+    // };
+</script>
